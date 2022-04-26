@@ -1,13 +1,15 @@
 import { NgModule } from "@angular/core";
-// eslint-disable-next-line sort-imports
-import { BrowserModule } from "@angular/platform-browser";
-
-import { AppComponent } from "./app.component";
+import { TransferHttpCacheModule } from "@nguniversal/common";
+import {
+  BrowserModule,
+  BrowserTransferStateModule
+} from "@angular/platform-browser";
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [
+    BrowserModule.withServerTransition({ appId: "serverApp" }),
+    BrowserTransferStateModule,
+    TransferHttpCacheModule
+  ]
 })
 export class AppModule {}
