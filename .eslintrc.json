@@ -37,7 +37,8 @@
             "style": "camelCase",
             "type": "attribute"
           }
-        ]
+        ],
+        "@typescript-eslint/explicit-member-accessibility": ["error"]
       }
     },
     {
