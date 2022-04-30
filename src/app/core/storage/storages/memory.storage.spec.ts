@@ -4,7 +4,7 @@ describe("MemoryStorage", () => {
   let service: MemoryStorage;
   const key = "ver1";
   // eslint-disable-next-line no-undef
-  const value = "New Value" as jasmine.Expected<any>;
+  const value = "New Value" as any;
 
   beforeEach(() => {
     service = new MemoryStorage();

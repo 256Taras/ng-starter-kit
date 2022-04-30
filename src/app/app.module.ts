@@ -5,11 +5,15 @@ import {
   BrowserTransferStateModule
 } from "@angular/platform-browser";
 
+import { LoggerModule } from "@core/logger/logger.module";
+import { environment } from "@environment";
+
 @NgModule({
   imports: [
     BrowserModule.withServerTransition({ appId: "serverApp" }),
     BrowserTransferStateModule,
-    TransferHttpCacheModule
+    TransferHttpCacheModule,
+    LoggerModule.forRoot(environment.logging)
   ]
 })
 export class AppModule {}
