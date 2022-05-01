@@ -15,8 +15,9 @@
  * 4 - clean shake box-sizing
  * 5,6 - standard size
  */
-html, body {
-  font-family: 'Roboto', sans-serif; // 1
+html,
+body {
+  font-family: "Roboto", sans-serif; // 1
   font-size: 16px; // 2
   font-weight: 400; // 3
   box-sizing: border-box; // 4
@@ -35,7 +36,6 @@ html {
   -ms-overflow-style: scrollbar; // 2
 }
 
-
 /**
  * Delegate box-sizing to parent node
  */
@@ -45,7 +45,6 @@ html {
   box-sizing: inherit;
 }
 
-
 /**
  * Set body height in small window 100%
  */
@@ -54,11 +53,13 @@ body.window-small {
 }
 
 /* Sets default animation duration */
-a, button {
+a,
+button {
   transition: all 250ms ease;
 }
 
-ul, li {
+ul,
+li {
   list-style-type: none;
   margin: 0;
 }
