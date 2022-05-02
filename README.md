@@ -1,29 +1,92 @@
-# NgStarterKit
+Web project starter kit including modern tools and workflow based on
+[angular-cli](https://github.com/angular/angular-cli), best practices from the community, a scalable base template and
+a good learning base.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+### Benefits
 
-## Development server
+- Quickstart a project in seconds and focus on features, not on frameworks or tools
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Scalable architecture with base app template including example components, services and tests
 
-## Code scaffolding
+# Getting started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Go to project folder and install dependencies:
 
-## Build
+ ```bash
+ npm install
+ ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Launch development server, and open `localhost:4200` in your browser:
 
-## Running unit tests
+ ```bash
+ npm start
+ ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Commit culture
 
-## Running end-to-end tests
+Commit Convention is described in [this article](https://www.conventionalcommits.org/en/v1.0.0-beta.4/), here are seven
+simple rules:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Each commit message consists of a header, a body, and a footer.
 
-## Further help
+   <header>
+   <BLANK LINE>
+   <body>
+   <BLANK LINE>
+   <footer>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# ng-starter-kit
-# ng-starter-kit
+- The header is mandatory and must conform to the Commit Message Header format.
+- The body is mandatory for all commits except for those of type "docs".
+  When the body is present it must be at least 20 characters long and must conform to the Commit Message Body format.
+- The footer is optional. The Commit Message Footer format describes what the footer is used for and the structure it
+  must have.
+
+2. Commit Message Header
+
+   ```
+   <type>(<scope>): <short summary>
+     │       │             │
+     │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
+     │       │
+     │       └─⫸ Commit Scope: common|core|account-crud|migrations
+     │
+     └─⫸ Commit Type: build|docs|feat|fix|refactor|test
+
+
+   The <type> and <summary> fields are mandatory, the (<scope>) field is optional.
+   ```
+3. Type
+
+   Must be one of the following:
+
+- build: Changes that affect the build system or external dependencies (example scopes: npm, infra)
+- docs: Documentation only changes
+- feat: A new feature
+- fix: A bug fix
+- refactor: A code change that neither fixes a bug nor adds a feature
+- test: Adding missing tests or correcting existing tests
+
+4. Scope
+
+   Usually the scope should be the name of task.
+
+- none/empty string: useful for test and refactor changes that are done across all packages (
+  e.g. `test: add missing unit tests`) and for docs changes that are not related to a specific package (
+  e.g. `docs: fix typo in tutorial`).
+
+5. Summary
+
+   Use the summary field to provide a succinct description of the change:
+
+- use the imperative, present tense: "change" not "changed" nor "changes"
+- don't capitalize the first letter
+- no dot (.) at the end
+
+6. Commit Message Body
+
+   Use the body to explain what and why vs. how
+
+7. Commit Message Footer
+
+   The footer can contain information about breaking changes and deprecations and is also the place to reference GitHub
+   issues, Jira tickets, and other PRs that this commit closes or is related to.
