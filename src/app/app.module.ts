@@ -1,19 +1,11 @@
 import { NgModule } from "@angular/core";
-import { TransferHttpCacheModule } from "@nguniversal/common";
-import {
-  BrowserModule,
-  BrowserTransferStateModule
-} from "@angular/platform-browser";
+import { NotFoundModule } from "./modules/not-found/not-found.module";
+import { HomeRoutingModule } from "./modules/home/home-routing.module";
 
-import { LoggerModule } from "@core/logger/logger.module";
-import { environment } from "@environment";
-
+/**
+ * The not-found page should be the last
+ */
 @NgModule({
-  imports: [
-    BrowserModule.withServerTransition({ appId: "serverApp" }),
-    BrowserTransferStateModule,
-    TransferHttpCacheModule,
-    LoggerModule.forRoot(environment.logging)
-  ]
+  imports: [HomeRoutingModule, NotFoundModule]
 })
 export class AppModule {}
