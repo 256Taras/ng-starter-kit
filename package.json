@@ -40,6 +40,8 @@
     "@angular/router": "~13.3.0",
     "@nguniversal/express-engine": "^13.1.0",
     "express": "^4.15.2",
+    "fp-ts": "^2.12.1",
+    "io-ts": "^2.2.16",
     "jest-jasmine2": "^27.5.1",
     "ng-mocks": "^13.4.2",
     "rxjs": "~7.5.0",
