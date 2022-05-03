@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 
 import { coreContainers } from "./core.common";
-import { RouterModule } from "@angular/router";
+import { PreloadAllModules, RouterModule } from "@angular/router";
 import {
   BrowserModule,
   BrowserTransferStateModule
@@ -13,7 +13,10 @@ import { environment } from "@environment";
 @NgModule({
   declarations: [...coreContainers],
   imports: [
-    RouterModule.forRoot([]),
+    /**
+     * But this strategy PreloadAllModules may not be the best solution since Angular will load all modules, even those that the user visits very rarely. What we can do? Lets define our own Preload Strategy.
+     */
+    RouterModule.forRoot([], { preloadingStrategy: PreloadAllModules }),
     BrowserModule.withServerTransition({ appId: "serverApp" }),
     BrowserTransferStateModule,
     TransferHttpCacheModule,
