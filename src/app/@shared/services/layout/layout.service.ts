@@ -12,17 +12,16 @@ export class LayoutService {
     Breakpoints.Handset
   );
 
+  public constructor(private readonly _breakpointObserver: BreakpointObserver) {
+    this._intiSubscribers();
+  }
+
   public get layoutType$(): Observable<string> {
     return this._layoutSubject$.asObservable();
   }
 
   public get snapshotLayoutType(): string {
     return this._layoutSubject$.value;
-  }
-
-  // eslint-disable-next-line no-unused-vars
-  public constructor(private readonly _breakpointObserver: BreakpointObserver) {
-    this._intiSubscribers();
   }
 
   public is(size: string): boolean {

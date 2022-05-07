@@ -2,6 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "resolveJsonModule": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
@@ -27,6 +28,7 @@
       "@ui/*": ["src/app/@ui/*"],
       "@shared/*": ["src/app/@shared/*"],
       "@environment": ["src/environments/environment"],
+      "@assets/*": ["src/assets/*"],
     }
   },
   "angularCompilerOptions": {

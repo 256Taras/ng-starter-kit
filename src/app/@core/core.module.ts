@@ -1,14 +1,16 @@
 import { NgModule } from "@angular/core";
-
-import { coreContainers } from "./core.common";
 import { PreloadAllModules, RouterModule } from "@angular/router";
 import {
   BrowserModule,
   BrowserTransferStateModule
 } from "@angular/platform-browser";
 import { TransferHttpCacheModule } from "@nguniversal/common";
+
+import { coreContainers } from "./core.common";
 import { LoggerModule } from "@core/logger/logger.module";
 import { environment } from "@environment";
+import { TranslationModule } from "@core/i18n/translation.module";
+import { TRANSLATION_PREFIX_DEFAULT } from "@core/i18n/translation.common";
 
 @NgModule({
   declarations: [...coreContainers],
@@ -20,7 +22,10 @@ import { environment } from "@environment";
     BrowserModule.withServerTransition({ appId: "serverApp" }),
     BrowserTransferStateModule,
     TransferHttpCacheModule,
-    LoggerModule.forRoot(environment.logging)
+    LoggerModule.forRoot(environment.logging),
+    TranslationModule.forRoot({
+      prefix: TRANSLATION_PREFIX_DEFAULT
+    })
   ],
   exports: [RouterModule]
 })

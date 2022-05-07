@@ -5,9 +5,7 @@ const routes: Routes = [
   {
     path: "",
     loadChildren: () =>
-      import("./pages/not-found-page/not-found-page.module").then(
-        (m) => m.NotFoundPageModule
-      )
+      import("./page/not-found-page.module").then((m) => m.NotFoundPageModule)
   }
 ];
 
