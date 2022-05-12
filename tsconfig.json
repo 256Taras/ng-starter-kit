@@ -29,6 +29,7 @@
       "@shared/*": ["src/app/@shared/*"],
       "@environment": ["src/environments/environment"],
       "@assets/*": ["src/assets/*"],
+      "@auth/*": ["src/app/modules/auth/*"]
     }
   },
   "angularCompilerOptions": {

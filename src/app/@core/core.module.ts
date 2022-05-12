@@ -11,6 +11,7 @@ import { LoggerModule } from "@core/logger/logger.module";
 import { environment } from "@environment";
 import { TranslationModule } from "@core/i18n/translation.module";
 import { TRANSLATION_PREFIX_DEFAULT } from "@core/i18n/translation.common";
+import { BASE_API_URL } from "@core/config/base-api-url";
 
 @NgModule({
   declarations: [...coreContainers],
@@ -18,7 +19,12 @@ import { TRANSLATION_PREFIX_DEFAULT } from "@core/i18n/translation.common";
     /**
      * But this strategy PreloadAllModules may not be the best solution since Angular will load all modules, even those that the user visits very rarely. What we can do? Lets define our own Preload Strategy.
      */
-    RouterModule.forRoot([], { preloadingStrategy: PreloadAllModules }),
+    RouterModule.forRoot([], {
+      preloadingStrategy: PreloadAllModules,
+      anchorScrolling: "enabled",
+      initialNavigation: "enabled",
+      scrollPositionRestoration: "enabled"
+    }),
     BrowserModule.withServerTransition({ appId: "serverApp" }),
     BrowserTransferStateModule,
     TransferHttpCacheModule,
@@ -27,6 +33,7 @@ import { TRANSLATION_PREFIX_DEFAULT } from "@core/i18n/translation.common";
       prefix: TRANSLATION_PREFIX_DEFAULT
     })
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [{ provide: BASE_API_URL, useValue: environment.baseUrl }]
 })
 export class CoreModule {}

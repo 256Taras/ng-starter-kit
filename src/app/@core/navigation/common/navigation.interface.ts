@@ -1,5 +1,7 @@
 export enum NavigationPath {
-  Home = ""
+  Home = "",
+  singUp = "sing-up",
+  singIn = "sing-in"
 }
 
 export interface NavigationLink {

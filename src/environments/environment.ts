@@ -14,7 +14,8 @@ export const environment = {
   translation: {
     languages: ["ua", "en"],
     language: "ua"
-  }
+  },
+  baseUrl: ""
 };
 
 /*
